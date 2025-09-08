@@ -1,12 +1,26 @@
 <!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <title>My First Website</title>
-</head>
-<body>
-  <h1>안녕하세요!! 🎉</h1>
-  <p>이 페이지가 GitHub Pages에서 보이면 성공입니다!</p>
-  <p>재원씨 성훈이가 배고프데요</p>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My name</title>
+  </head>
+  <body>
+    <div class="hero">
+      <!-- 곡선(아치) 위에 텍스트를 얹기 위한 SVG -->
+      <svg class="curve" viewBox="0 0 1200 600" aria-hidden="true">
+        <defs>
+          <!-- 아래 곡선을 원하는 형태로 조금씩 조절해도 됨 -->
+          <path id="arc" d="M 80 450 C 380 300, 820 300, 1120 450" />
+        </defs>
+
+        <!-- 중앙 정렬된 큰 텍스트가 곡선을 따라가도록 -->
+        <text text-anchor="middle" fill="#fff" font-size="96" font-weight="700" letter-spacing="2">
+          <textPath href="#arc" startOffset="50%">My name</textPath>
+        </text>
+      </svg>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

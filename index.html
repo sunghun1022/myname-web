@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My name</title>
+    <!-- ✅ CSS 추가 (방법 A: 직접 불러오기) -->
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <div class="hero">
@@ -15,12 +17,13 @@
         </defs>
 
         <!-- 중앙 정렬된 큰 텍스트가 곡선을 따라가도록 -->
-        <text text-anchor="middle" fill="#fff" font-size="96" font-weight="700" letter-spacing="2">
+        <text text-anchor="middle" fill="#fff" font-size="140" font-weight="700" letter-spacing="2">
           <textPath href="#arc" startOffset="50%">My name</textPath>
         </text>
       </svg>
     </div>
 
+    <!-- ✅ JS 모듈은 그대로 -->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

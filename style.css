@@ -61,12 +61,12 @@ body.home {
 }
 
 .logo {
-  width: min(90vw, 600px);     /* 여기만 수정해서 크기 조절 */
+  width: min(90vw, 300px);     /* 여기만 수정해서 크기 조절 */
   height: auto;
   display: block;
   margin-inline: auto;
   z-index: 1;
-  margin-top: 45px;
+  margin-top: 85px;
 }
 
 /* 공통 아이콘 스타일 */

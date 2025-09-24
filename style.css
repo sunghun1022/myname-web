@@ -165,15 +165,33 @@ body.about-page {
 
 /* ===== 반응형 보정 ===== */
 @media (max-width: 768px) {
-  .hero { min-height: auto; padding-bottom: 24px; }
+  .logo {
+    width: 70vw;   /* 화면 비율 기준으로 줄이기 */
+    margin-top: 40px;
+  }
 
-  /* 아이콘 재배치/축소로 겹침 방지 */
-  .icon { width: clamp(70px, 22vw, 150px); opacity: .95; }
-  .gift     { left: 4%;  top: 55%; }
-  .cap      { left: 12%; top:  8%; }
-  .socks    { right: 6%;  top: 12%; }
-  .bag      { right: 4%;  bottom: 6%; }
-  .keychain { left: 6%;  bottom: 6%; }
+  .icon {
+    width: 100px;   /* 아이콘 크기도 줄이기 */
+  }
+
+  /* 아이콘 위치 모바일용으로 재배치 */
+  .gift { left: 5%; top: 60%; }
+  .cap { top: 10%; left: 10%; }
+  .bag { right: 10%; bottom: 8%; }
+  .keychain { left: 5%; bottom: 10%; }
+  .socks { right: 10%; top: 25%; }
+
+  .follow-section p {
+    font-size: 18px;
+  }
+
+  .follow-section .instagram-icon {
+    font-size: 28px;
+  }
+
+  .about-link a {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 480px) {

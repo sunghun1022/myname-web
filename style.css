@@ -165,9 +165,13 @@ body.about-page {
 
 /* ===== 반응형 보정 ===== */
 @media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;   /* 그냥 전체 높이 채우기 */
+    padding-bottom: 60px; /* 아래쪽 공간 확보 */
+  }
   .logo {
     width: 50vw;   /* 화면 비율 기준으로 줄이기 */
-    margin-top: 10px;
+    margin-top: 40px;
   }
 
   .icon {

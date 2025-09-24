@@ -3,27 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My name</title>
-    <!-- ✅ CSS 추가 (방법 A: 직접 불러오기) -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>shopmyname</title>
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
-  <body>
+  <body class="home">
+    <header class="site-header">
+      <p>OPENING LATE OCTOBER 2025</p>
+    </header>
+    <div class="about-link">
+      <a href="AboutUs.html">ABOUT US</a>
+    </div>
     <div class="hero">
-      <!-- 곡선(아치) 위에 텍스트를 얹기 위한 SVG -->
-      <svg class="curve" viewBox="0 0 1200 600" aria-hidden="true">
-        <defs>
-          <!-- 아래 곡선을 원하는 형태로 조금씩 조절해도 됨 -->
-          <path id="arc" d="M 80 450 C 380 300, 820 300, 1120 450" />
-        </defs>
-
-        <!-- 중앙 정렬된 큰 텍스트가 곡선을 따라가도록 -->
-        <text text-anchor="middle" fill="#fff" font-size="140" font-weight="700" letter-spacing="2">
-          <textPath href="#arc" startOffset="50%">My name</textPath>
-        </text>
-      </svg>
+      <!-- SVG 대신 이미지 넣기 -->
+      <img src="/Images/Group 30.png" alt="shopmyname logo" class="logo" />
+      <div class="follow-section">
+        <p>Follow our journey</p>
+        <a href="https://www.instagram.com/myname_nz/" target="_blank" class="instagram-icon">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+      <img src="/Images/Group 19.png" alt="Gift" class="icon gift">
+      <img src="/Images/Group 20.png" alt="Cap" class="icon cap">
+      <img src="/Images/Group 21.png" alt="Bag" class="icon bag">
+      <img src="/Images/Group 22.png" alt="Keychain" class="icon keychain">
+      <img src="/Images/Group 23.png" alt="Socks" class="icon socks">
     </div>
 
-    <!-- ✅ JS 모듈은 그대로 -->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

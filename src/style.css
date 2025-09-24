@@ -1,0 +1,179 @@
+/* 기본 */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+
+/* 배경은 body에만 */
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #5c2a23;           /* 기본 글자색 */
+  background: #fff;         /* 기본은 흰색 (서브페이지용) */
+}
+
+/* 홈(index) 전용: 줄무늬 배경 */
+body.home {
+  background: url('/Images/Group 27.png') no-repeat center/cover;
+  color: #ffffff;           /* 홈에서만 흰 글자 */
+}
+
+/* 헤더 */
+.site-header {
+  background-color: #f4b1af; /* 연핑크 */
+  text-align: center;
+  padding: 10px 0;
+}
+.site-header p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #5c2a23;
+  letter-spacing: 1px;
+}
+
+/* 히어로: 가운데 정렬 */
+.hero {
+  position: relative;
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;   /* <-- 세로 배치 */
+  justify-content: center;
+  align-items: center;
+  gap: 12px;                /* 로고와 텍스트 간 간격 */
+  overflow: hidden;
+}
+
+
+.about-link {
+  position: absolute;  /* 또는 fixed */
+  top: 15px;           /* 위에서 떨어뜨리기 */
+  left: 30px;          /* 왼쪽에서 떨어뜨리기 */
+  z-index: 20;         /* 위에 올라오게 */
+  margin-top: 40px;
+}
+
+.about-link a {
+  font-family: 'Quicksand', sans-serif;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 700;
+  color: #5c2a23;
+  letter-spacing: 1px;
+  margin-top: 30px;
+}
+
+.logo {
+  width: min(90vw, 600px);     /* 여기만 수정해서 크기 조절 */
+  height: auto;
+  display: block;
+  margin-inline: auto;
+  z-index: 1;
+  margin-top: 45px;
+}
+
+/* 공통 아이콘 스타일 */
+.icon {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  z-index: 0;
+}
+
+.gift { left: 12%; top: 35%; }
+.cap { top: 8%; left: 38%; }
+.bag { right: 18%; bottom: 12%; }
+.keychain { left: 20%; bottom: 8%; }
+.socks { right: 22%; top: 18%; }
+
+.follow {
+  font-size: 50px;
+}
+
+.follow-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.follow-section p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  color: #5c2a23;
+  margin-bottom: 15px; /* 글자랑 아이콘 간격 */
+}
+
+.follow-section .instagram-icon {
+  font-size: 32px;   /* 아이콘 크기 */
+  color: #5c2a23;    /* 기본 색상 */
+  text-decoration: none;
+}
+
+.follow-section .instagram-icon:hover {
+  color: #cf6b85;    /* 호버 시 색상 */
+}
+
+
+/* About Us페이지 */
+body.about-page {
+  background: #fdfcf9;  /* 아주 옅은 크림톤 */
+  color: #5c2a23;
+}
+
+/* 상단 가이드 레일 */
+.about-rail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+}
+
+
+/* HOME 링크 */
+.about-rail .home-link {
+  color: #cf6b85;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 30px;   /* ← 크기 키움 */
+}
+.about-rail .home-link:hover {
+  text-decoration: underline;
+}
+
+/* 인스타 아이콘 */
+.about-rail .ig-link {
+  color: #cf6b85;
+  font-size: 38px;   /* ← 아이콘 크기 키움 */
+}
+.about-rail .ig-link:hover {
+  color: #a9445b;
+}
+
+/* 로고 */
+.brand-mark {
+  display: block;
+  margin: 24px auto;
+  width: 280px;
+  height: auto;
+}
+
+/* 본문 */
+.about-page .about-wrap {
+  max-width: 900px;         
+  margin: 150px 0 80px 80px; /* 위쪽 여백 크게 (100px), 왼쪽 80px */
+  padding: 0;
+  text-align: left;         
+}
+
+.about-page .about-wrap h1 {
+  font-size: 64px;          /* 제목 더 크게 */
+  font-weight: 700;
+  margin-bottom: 36px;      /* 제목 아래 간격 */
+  letter-spacing: 3px;      /* 글자 사이 간격 조금 넓힘 */
+  color: #5c2a23;
+  text-transform: uppercase; /* 전부 대문자 */
+}
+
+.about-page .about-wrap p {
+  line-height: 1.9;         /* 줄 간격 살짝 더 넓게 */
+  margin-bottom: 24px;      /* 문단 간격 늘림 */
+  font-size: 18px;          /* 본문 글씨 조금 크게 */
+  color: #5c2a23;
+}

@@ -19,16 +19,17 @@ body.home {
 
 /* ===== 헤더 ===== */
 .site-header {
-  background-color: #f4b1af; /* 연핑크 */
+  background-color: #f4b1af;
   text-align: center;
   padding: 10px 0;
 }
 .site-header p {
   margin: 0;
-  font-size: 18px;
-  font-weight: bold;
+  font-weight: 700;
   color: #5c2a23;
-  letter-spacing: 1px;
+  letter-spacing: .06em;
+  /* 화면 크기에 따라 가변 */
+  font-size: clamp(14px, 2.5vw, 18px);
 }
 
 /* ===== 홈 히어로 ===== */
@@ -36,14 +37,15 @@ body.home {
   position: relative;
   height: calc(100vh - 50px);
   display: flex;
-  flex-direction: column;   /* 세로 배치 */
+  flex-direction: column;   /* 세로 배치 유지 */
   justify-content: center;
   align-items: center;
   gap: 12px;
   overflow: hidden;
+  padding: 16px 0;
 }
 
-/* ABOUT 링크 */
+/* ABOUT 링크 (홈 좌상단) */
 .about-link {
   position: absolute;
   top: 15px;
@@ -52,144 +54,152 @@ body.home {
   margin-top: 40px;
 }
 .about-link a {
-  font-family: 'Quicksand', sans-serif;
   text-decoration: none;
-  font-size: 30px;
   font-weight: 700;
   color: #5c2a23;
-  letter-spacing: 1px;
-  margin-top: 30px;
+  letter-spacing: .06em;
+  font-size: clamp(18px, 3.2vw, 30px);
+  
 }
 
 /* 로고 */
 .logo {
-  width: min(90vw, 300px);
+  width: min(90vw, 360px);  /* 조금 키워도 화면에 맞게 */
   height: auto;
   display: block;
   margin-inline: auto;
   z-index: 1;
-  margin-top: 85px;
+  margin-top: 120px;
 }
 
-/* ===== 아이콘 ===== */
+/* ===== 아이콘(스티커) ===== */
 .icon {
   position: absolute;
-  width: 200px;
+  width: clamp(80px, 20vw, 200px); /* 가변 크기 */
   height: auto;
   z-index: 0;
+  pointer-events: none; /* 터치 방해 방지 */
 }
 
-.gift { left: 12%; top: 35%; }
-.cap { top: 8%; left: 38%; }
-.bag { right: 18%; bottom: 12%; }
+/* 데스크탑 기준 위치(퍼센트) */
+.gift     { left: 12%; top: 35%; }
+.cap      { left: 38%; top:  5%; }
+.bag      { right: 18%; bottom: 12%; }
 .keychain { left: 20%; bottom: 8%; }
-.socks { right: 22%; top: 18%; }
+.socks    { right: 22%; top: 18%; }
 
-/* Follow */
-.follow { font-size: 50px; }
-.follow-section {
-  text-align: center;
-  margin-top: 20px;
-}
+/* Follow 섹션 */
+.follow-section { text-align: center; margin-top: 10px; }
 .follow-section p {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 25px;
   font-weight: 500;
   color: #5c2a23;
-  margin-bottom: 15px;
+  margin: 10px 0 12px;
+  font-size: clamp(16px, 2.8vw, 25px);
 }
 .follow-section .instagram-icon {
-  font-size: 32px;
   color: #5c2a23;
   text-decoration: none;
+  font-size: clamp(22px, 6vw, 32px);
+  display: inline-flex;
+  width: 44px; height: 44px;       /* 터치 타겟 */
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
 }
 .follow-section .instagram-icon:hover { color: #cf6b85; }
 
-/* ===== About Us 페이지 ===== */
+/* ===== About 페이지 ===== */
 body.about-page {
   background: #fdfcf9;
   color: #5c2a23;
 }
 
-/* 상단 레일 */
+/* 상단 가이드 레일 (HOME/IG, 로고 위쪽 라인) */
 .about-rail {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 32px;
+  padding: clamp(12px, 3vw, 16px) clamp(16px, 4vw, 32px);
 }
 .about-rail .home-link {
   color: #cf6b85;
   font-weight: 600;
   text-decoration: none;
-  font-size: 30px;
+  font-size: clamp(18px, 3.2vw, 30px);
 }
 .about-rail .home-link:hover { text-decoration: underline; }
 .about-rail .ig-link {
   color: #cf6b85;
-  font-size: 38px;
+  font-size: clamp(22px, 5vw, 38px);
 }
 .about-rail .ig-link:hover { color: #a9445b; }
 
-/* 로고 (About) */
+/* 로고 (About 상단 중앙) */
 .brand-mark {
   display: block;
   margin: 24px auto;
-  width: 280px;
+  width: clamp(160px, 24vw, 280px);
   height: auto;
 }
 
-/* 본문 (About) */
+/* 본문(About) */
 .about-page .about-wrap {
   max-width: 900px;
-  margin: 150px 0 80px 80px;
+  /* 위/왼 여백을 가변으로 */
+  margin: clamp(80px, 12vw, 150px) 0 80px clamp(16px, 8vw, 80px);
   padding: 0;
   text-align: left;
 }
 .about-page .about-wrap h1 {
-  font-size: 64px;
   font-weight: 700;
-  margin-bottom: 36px;
-  letter-spacing: 3px;
-  color: #5c2a23;
+  margin-bottom: clamp(20px, 5vw, 36px);
+  letter-spacing: .06em;
   text-transform: uppercase;
+  font-size: clamp(32px, 8vw, 64px);
 }
 .about-page .about-wrap p {
   line-height: 1.9;
-  margin-bottom: 24px;
-  font-size: 18px;
+  margin-bottom: clamp(16px, 4.2vw, 24px);
+  font-size: clamp(16px, 4.2vw, 18px);
   color: #5c2a23;
 }
-@media (max-width: 768px) {
-  .hero {
-    height: calc(100svh - 50px);  /* 모바일 브라우저 UI 반영 */
-    overflow: hidden;
-  }
 
+/* ===== 반응형 보정 ===== */
+@media (max-width: 768px) {
   .logo {
-    width: 60vw;       /* 화면 폭 기준 */
-    margin-top: 28px;
+    width: 70vw;   /* 화면 비율 기준으로 줄이기 */
+    margin-top: 40px;
   }
 
   .icon {
-    width: 20vw;       /* 픽셀 대신 비율 */
+    width: 100px;   /* 아이콘 크기도 줄이기 */
   }
 
-  /* 위치를 비율로 재배치 */
-  .cap      { left: 8vw;  top: 12svh; }
-  .socks    { right: 8vw; top: 20svh; }
-  .gift     { left: 6vw;  top: 60svh; }
-  .keychain { left: 6vw;  bottom: 12svh; }
-  .bag      { right: 8vw; bottom: 10svh; }
+  /* 아이콘 위치 모바일용으로 재배치 */
+  .gift { left: 5%; top: 60%; }
+  .cap { top: 10%; left: 10%; }
+  .bag { right: 10%; bottom: 8%; }
+  .keychain { left: 5%; bottom: 10%; }
+  .socks { right: 10%; top: 25%; }
 
-  .follow-section p { font-size: 18px; margin-top: 10px; }
-  .follow-section .instagram-icon { font-size: 28px; }
-  .about-link a { font-size: 20px; }
+  .follow-section p {
+    font-size: 18px;
+  }
+
+  .follow-section .instagram-icon {
+    font-size: 28px;
+  }
+
+  .about-link a {
+    font-size: 20px;
+  }
 }
 
-/* 작은 폰(아이폰 SE 등) 추가 미세 조정 */
 @media (max-width: 480px) {
-  .logo { width: 66vw; }
-  .icon { width: 22vw; }
-  .socks { top: 22svh; }
+  .icon { width: clamp(60px, 24vw, 120px); }
+  .gift     { left: 2%;  top: 58%; }
+  .cap      { left: 8%;  top:  8%; }
+  .socks    { right: 3%; top:  9%; }
+  .bag      { right: 2%; bottom: 5%; }
+  .keychain { left: 4%; bottom: 5%; }
 }

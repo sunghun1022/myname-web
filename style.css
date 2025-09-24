@@ -86,9 +86,7 @@ body.home {
 .socks { right: 22%; top: 18%; }
 
 /* Follow */
-.follow {
-  font-size: 50px;
-}
+.follow { font-size: 50px; }
 .follow-section {
   text-align: center;
   margin-top: 20px;
@@ -105,9 +103,7 @@ body.home {
   color: #5c2a23;
   text-decoration: none;
 }
-.follow-section .instagram-icon:hover {
-  color: #cf6b85;
-}
+.follow-section .instagram-icon:hover { color: #cf6b85; }
 
 /* ===== About Us 페이지 ===== */
 body.about-page {
@@ -135,7 +131,7 @@ body.about-page {
 }
 .about-rail .ig-link:hover { color: #a9445b; }
 
-/* 로고 */
+/* 로고 (About) */
 .brand-mark {
   display: block;
   margin: 24px auto;
@@ -143,7 +139,7 @@ body.about-page {
   height: auto;
 }
 
-/* 본문 */
+/* 본문 (About) */
 .about-page .about-wrap {
   max-width: 900px;
   margin: 150px 0 80px 80px;
@@ -164,47 +160,36 @@ body.about-page {
   font-size: 18px;
   color: #5c2a23;
 }
-
-/* ===== 반응형 보정 ===== */
 @media (max-width: 768px) {
   .hero {
-    min-height: 100dvh;   /* 그냥 전체 높이 채우기 */
-    padding-bottom: 60px; /* 아래쪽 공간 확보 */
+    height: calc(100svh - 50px);  /* 모바일 브라우저 UI 반영 */
+    overflow: hidden;
   }
+
   .logo {
-    width: 50vw;   /* 화면 비율 기준으로 줄이기 */
-    margin-top: 40px;
+    width: 60vw;       /* 화면 폭 기준 */
+    margin-top: 28px;
   }
 
   .icon {
-    width: 100px;   /* 아이콘 크기도 줄이기 */
+    width: 20vw;       /* 픽셀 대신 비율 */
   }
 
-  /* 아이콘 위치 모바일용으로 재배치 */
-  .gift { left: 5%; top: 60%; }
-  .cap { top: 10%; left: 10%; }
-  .bag { right: 10%; bottom: 8%; }
-  .keychain { left: 5%; bottom: 10%; }
-  .socks { right: 10%; top: 25%; }
+  /* 위치를 비율로 재배치 */
+  .cap      { left: 8vw;  top: 12svh; }
+  .socks    { right: 8vw; top: 20svh; }
+  .gift     { left: 6vw;  top: 60svh; }
+  .keychain { left: 6vw;  bottom: 12svh; }
+  .bag      { right: 8vw; bottom: 10svh; }
 
-  .follow-section p {
-    font-size: 18px;
-  }
-
-  .follow-section .instagram-icon {
-    font-size: 28px;
-  }
-
-  .about-link a {
-    font-size: 20px;
-  }
+  .follow-section p { font-size: 18px; margin-top: 10px; }
+  .follow-section .instagram-icon { font-size: 28px; }
+  .about-link a { font-size: 20px; }
 }
 
+/* 작은 폰(아이폰 SE 등) 추가 미세 조정 */
 @media (max-width: 480px) {
-  .icon { width: clamp(60px, 24vw, 120px); }
-  .gift     { left: 2%;  top: 58%; }
-  .cap      { left: 8%;  top:  8%; }
-  .socks    { right: 3%; top:  9%; }
-  .bag      { right: 2%; bottom: 5%; }
-  .keychain { left: 4%; bottom: 5%; }
+  .logo { width: 66vw; }
+  .icon { width: 22vw; }
+  .socks { top: 22svh; }
 }

@@ -166,8 +166,8 @@ body.about-page {
 /* ===== 반응형 보정 ===== */
 @media (max-width: 768px) {
   .logo {
-    width: 70vw;   /* 화면 비율 기준으로 줄이기 */
-    margin-top: 40px;
+    width: 50vw;   /* 화면 비율 기준으로 줄이기 */
+    margin-top: 10px;
   }
 
   .icon {

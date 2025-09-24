@@ -1,4 +1,9 @@
 /* ===== 공통 기본 ===== */
+
+:root {
+  --header-h: 50px;   /* 헤더 실제 높이(원하면 48~56px 사이로 조절) */
+}
+
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
 
@@ -21,31 +26,40 @@ body.home {
 .site-header {
   background-color: #f4b1af;
   text-align: center;
-  padding: 10px 0;
+  height: var(--header-h);     /* ← padding 대신 고정 높이 */
+  padding: 0;                  /* 기존 padding: 10px 0; 지움 */
+  display: flex;
+  align-items: center;         /* 수직 중앙정렬 */
+  justify-content: center;     /* 수평 중앙정렬 */
 }
 .site-header p {
   margin: 0;
   font-weight: 700;
   color: #5c2a23;
   letter-spacing: .06em;
-  /* 화면 크기에 따라 가변 */
   font-size: clamp(14px, 2.5vw, 18px);
 }
 
 /* ===== 홈 히어로 ===== */
 .hero {
   position: relative;
-  min-height: calc(100vh - 50px); /* 기본 */
-  min-height: calc(100svh - 50px);/* 작은뷰포트 */
-  min-height: calc(100dvh - 50px);/* 동적뷰포트(모바일 안전) */
+
+  /* 모바일 주소창을 고려한 안전한 뷰포트 단위 */
+  min-height: calc(100svh - var(--header-h));   /* 최신 브라우저 */
+  min-height: calc(100dvh - var(--header-h));   /* 폴백 1 */
+  min-height: calc(100vh  - var(--header-h));   /* 폴백 2 */
+
   display: flex;
-  flex-direction: column;   /* 세로 배치 유지 */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 12px;
-  overflow: hidden;
-  padding: 16px 0;
+
+  /* 잘림 방지 */
+  overflow: visible;           /* ← 기존 overflow: hidden 제거 */
+  padding: 16px 0 clamp(48px, 10vh, 96px);  /* 아래 여백 넉넉히 */
 }
+
 
 /* ABOUT 링크 (홈 좌상단) */
 .about-link {
@@ -65,12 +79,12 @@ body.home {
 
 /* 로고 */
 .logo {
-  width: min(90vw, 360px);  /* 조금 키워도 화면에 맞게 */
+  width: min(90vw, 360px);
   height: auto;
   display: block;
   margin-inline: auto;
   z-index: 1;
-  margin-top: clamp(12px, 6vh, 56px);
+  margin-top: clamp(180px, 20vh, 240px); /* ↑ 크게 조정 */
 }
 
 /* ===== 아이콘(스티커) ===== */

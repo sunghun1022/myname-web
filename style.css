@@ -1,9 +1,4 @@
 /* ===== 공통 기본 ===== */
-
-:root {
-  --header-h: 50px;   /* 헤더 실제 높이(원하면 48~56px 사이로 조절) */
-}
-
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
 
@@ -24,44 +19,31 @@ body.home {
 
 /* ===== 헤더 ===== */
 .site-header {
-  background-color: #f4b1af;
+  background-color: #f4b1af; /* 연핑크 */
   text-align: center;
-  height: var(--header-h);     /* ← padding 대신 고정 높이 */
-  padding: 0;                  /* 기존 padding: 10px 0; 지움 */
-  display: flex;
-  align-items: center;         /* 수직 중앙정렬 */
-  justify-content: center;     /* 수평 중앙정렬 */
+  padding: 10px 0;
 }
 .site-header p {
   margin: 0;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: bold;
   color: #5c2a23;
-  letter-spacing: .06em;
-  font-size: clamp(14px, 2.5vw, 18px);
+  letter-spacing: 1px;
 }
 
 /* ===== 홈 히어로 ===== */
 .hero {
   position: relative;
-
-  /* 모바일 주소창을 고려한 안전한 뷰포트 단위 */
-  min-height: calc(100svh - var(--header-h));   /* 최신 브라우저 */
-  min-height: calc(100dvh - var(--header-h));   /* 폴백 1 */
-  min-height: calc(100vh  - var(--header-h));   /* 폴백 2 */
-
+  height: calc(100vh - 50px);
   display: flex;
-  flex-direction: column;
+  flex-direction: column;   /* 세로 배치 */
   justify-content: center;
   align-items: center;
   gap: 12px;
-
-  /* 잘림 방지 */
-  overflow: visible;           /* ← 기존 overflow: hidden 제거 */
-  padding: 16px 0 clamp(48px, 10vh, 96px);  /* 아래 여백 넉넉히 */
+  overflow: hidden;
 }
 
-
-/* ABOUT 링크 (홈 좌상단) */
+/* ABOUT 링크 */
 .about-link {
   position: absolute;
   top: 15px;
@@ -70,112 +52,116 @@ body.home {
   margin-top: 40px;
 }
 .about-link a {
+  font-family: 'Quicksand', sans-serif;
   text-decoration: none;
+  font-size: 30px;
   font-weight: 700;
   color: #5c2a23;
-  letter-spacing: .06em;
-  font-size: clamp(18px, 3.2vw, 30px);
+  letter-spacing: 1px;
+  margin-top: 30px;
 }
 
 /* 로고 */
 .logo {
-  width: min(90vw, 360px);
+  width: min(90vw, 300px);
   height: auto;
   display: block;
   margin-inline: auto;
   z-index: 1;
-  margin-top: clamp(180px, 20vh, 240px); /* ↑ 크게 조정 */
+  margin-top: 85px;
 }
 
-/* ===== 아이콘(스티커) ===== */
+/* ===== 아이콘 ===== */
 .icon {
   position: absolute;
-  width: clamp(80px, 20vw, 200px); /* 가변 크기 */
+  width: 200px;
   height: auto;
   z-index: 0;
-  pointer-events: none; /* 터치 방해 방지 */
 }
 
-/* 데스크탑 기준 위치(퍼센트) */
-.gift     { left: 12%; top: 35%; }
-.cap      { left: 38%; top:  8%; }
-.bag      { right: 18%; bottom: 12%; }
+.gift { left: 12%; top: 35%; }
+.cap { top: 8%; left: 38%; }
+.bag { right: 18%; bottom: 12%; }
 .keychain { left: 20%; bottom: 8%; }
-.socks    { right: 22%; top: 18%; }
+.socks { right: 22%; top: 18%; }
 
-/* Follow 섹션 */
-.follow-section { text-align: center; margin-top: 10px; }
+/* Follow */
+.follow {
+  font-size: 50px;
+}
+.follow-section {
+  text-align: center;
+  margin-top: 20px;
+}
 .follow-section p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px;
   font-weight: 500;
   color: #5c2a23;
-  margin: 10px 0 12px;
-  font-size: clamp(16px, 2.8vw, 25px);
+  margin-bottom: 15px;
 }
 .follow-section .instagram-icon {
+  font-size: 32px;
   color: #5c2a23;
   text-decoration: none;
-  font-size: clamp(22px, 6vw, 32px);
-  display: inline-flex;
-  width: 44px; height: 44px;       /* 터치 타겟 */
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
 }
-.follow-section .instagram-icon:hover { color: #cf6b85; }
+.follow-section .instagram-icon:hover {
+  color: #cf6b85;
+}
 
-/* ===== About 페이지 ===== */
+/* ===== About Us 페이지 ===== */
 body.about-page {
   background: #fdfcf9;
   color: #5c2a23;
 }
 
-/* 상단 가이드 레일 (HOME/IG, 로고 위쪽 라인) */
+/* 상단 레일 */
 .about-rail {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(12px, 3vw, 16px) clamp(16px, 4vw, 32px);
+  padding: 16px 32px;
 }
 .about-rail .home-link {
   color: #cf6b85;
   font-weight: 600;
   text-decoration: none;
-  font-size: clamp(18px, 3.2vw, 30px);
+  font-size: 30px;
 }
 .about-rail .home-link:hover { text-decoration: underline; }
 .about-rail .ig-link {
   color: #cf6b85;
-  font-size: clamp(22px, 5vw, 38px);
+  font-size: 38px;
 }
 .about-rail .ig-link:hover { color: #a9445b; }
 
-/* 로고 (About 상단 중앙) */
+/* 로고 */
 .brand-mark {
   display: block;
   margin: 24px auto;
-  width: clamp(160px, 24vw, 280px);
+  width: 280px;
   height: auto;
 }
 
-/* 본문(About) */
+/* 본문 */
 .about-page .about-wrap {
   max-width: 900px;
-  /* 위/왼 여백을 가변으로 */
-  margin: clamp(80px, 12vw, 150px) 0 80px clamp(16px, 8vw, 80px);
+  margin: 150px 0 80px 80px;
   padding: 0;
   text-align: left;
 }
 .about-page .about-wrap h1 {
+  font-size: 64px;
   font-weight: 700;
-  margin-bottom: clamp(20px, 5vw, 36px);
-  letter-spacing: .06em;
+  margin-bottom: 36px;
+  letter-spacing: 3px;
+  color: #5c2a23;
   text-transform: uppercase;
-  font-size: clamp(32px, 8vw, 64px);
 }
 .about-page .about-wrap p {
   line-height: 1.9;
-  margin-bottom: clamp(16px, 4.2vw, 24px);
-  font-size: clamp(16px, 4.2vw, 18px);
+  margin-bottom: 24px;
+  font-size: 18px;
   color: #5c2a23;
 }
 

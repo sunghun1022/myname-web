@@ -64,7 +64,8 @@ body.home {
 
 /* 로고 */
 .logo {
-  width: min(90vw, 360px);  /* 조금 키워도 화면에 맞게 */
+  width: min(70vw, 50vh, 320px);
+  max-height: 50vh; /* 조금 키워도 화면에 맞게 */
   height: auto;
   display: block;
   margin-inline: auto;
@@ -167,16 +168,17 @@ body.about-page {
 /* ===== 반응형 보정 ===== */
 @media (max-width: 768px) {
   .logo {
-    width: 70vw;   /* 화면 비율 기준으로 줄이기 */
-    margin-top: 40px;
+    width: clamp(140px, 35vh, 260px);
+    max-height: 40vh;
+    margin-top: 8px;
   }
 
   .icon {
-    width: 100px;   /* 아이콘 크기도 줄이기 */
+    width: clamp(50px, 14vw, 120px);
   }
 
   /* 아이콘 위치 모바일용으로 재배치 */
-  .gift { left: 5%; top: 60%; }
+  .gift { left: 5%; top: 70%; }
   .cap { top: 10%; left: 10%; }
   .bag { right: 10%; bottom: 8%; }
   .keychain { left: 5%; bottom: 10%; }
@@ -198,8 +200,34 @@ body.about-page {
 @media (max-width: 480px) {
   .icon { width: clamp(60px, 24vw, 120px); }
   .gift     { left: 2%;  top: 58%; }
-  .cap      { left: 8%;  top:  8%; }
-  .socks    { right: 3%; top:  9%; }
+  .cap      { left: 8%;  top:  12%; }
+  .socks    { right: 3%; top:  13%; }
   .bag      { right: 2%; bottom: 5%; }
   .keychain { left: 4%; bottom: 5%; }
+}
+
+
+@media (min-width: 820px) and (max-width: 900px)
+  and (min-height: 360px) and (max-height: 420px)
+  and (orientation: landscape) {
+
+  /* 로고 더 작게 */
+  .logo {
+    width: clamp(140px, 35vh, 260px);
+    max-height: 34vh;
+    margin-top: 6px;
+  }
+
+  /* 아이콘 더 작게 */
+  .icon {
+    width: clamp(42px, 19vh, 80px);
+  }
+
+  /* 팔로우 문구/인스타 아이콘 살짝 축소 */
+  .follow-section p { font-size: 16px; }
+  .follow-section .instagram-icon { font-size: 22px; }
+
+  .cap {
+    left: 25%;
+    top: 10;}
 }
